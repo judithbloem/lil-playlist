@@ -1,28 +1,16 @@
 import React from "react";
 import SongForm from "./SongForm";
+import SongList from "./SongList";
 
 class SongOverview extends React.Component {
   constructor() {
     super();
     this.state = {
-      songs: [
-        // (title: "It's the Hard-Knocked Life"),
-        // (artist: " Annie "),
-        // (genre: "musical"),
-        // (rating: "5")
-      ]
+      songs: []
     };
   }
 
   addSong = song => {
-    // const GroceryList = ({ groceryItems, handleClickGroceryItem, addGrocery }) => {
-    //   return (
-    //     <React.Fragment>
-    //       <InputField onSubmit={addGrocery} />
-    //       <List items={groceryItems} handleClickItem={handleClickGroceryItem} />
-    //     </React.Fragment>
-    //   );
-    // };
     // doe iets om de state aan te passen
   };
 
@@ -40,7 +28,10 @@ class SongOverview extends React.Component {
             <th className="song-row__item">Rating</th>
           </tr>
         </table>
-        {/* <SongList songs={this.state.songs} /> */}
+
+        <SongList
+        // songs={this.state.songs}
+        />
       </div>
     );
   }
