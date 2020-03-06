@@ -44,15 +44,6 @@ class SongList extends React.Component {
       this.setState({ songs: this.state.songs.concat(item) });
     };
 
-    // const GroceryList = ({ groceryItems, handleClickGroceryItem, addGrocery }) => {
-    //   return (
-    //     <React.Fragment>
-    //       <InputField onSubmit={addGrocery} />
-    //       <List items={groceryItems} handleClickItem={handleClickGroceryItem} />
-    //     </React.Fragment>
-    //   );
-    // };
-
     return (
       <div>
         <h5> default song examples</h5>

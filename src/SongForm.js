@@ -22,7 +22,7 @@ class SongForm extends React.Component {
     event.preventDefault();
     // na submitten input leegmaken en daarna weer kunnen invullen.., hoe?
     // this.setState({
-    //   value/sontitle enz: ""});
+    //   value/songtitle enz: ""});
   }
 
   render() {
