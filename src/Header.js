@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <img src={img} alt="Problem?" />
-      <p>Lil Playlist</p>
+      <p>Lil' Playlist</p>
     </header>
   );
 }
