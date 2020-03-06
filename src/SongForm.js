@@ -19,7 +19,6 @@ class SongForm extends React.Component {
     // console.log("artist submitted: " + this.state.artist);
     // console.log("genre submitted: " + this.state.genre);
     // console.log("rating submitted: " + this.state.rating);
-    // console.log("rating submitted: " + this.state.rating2);
     event.preventDefault();
     // na submitten input leegmaken en daarna weer kunnen invullen.., hoe?
     // this.setState({
@@ -56,31 +55,22 @@ class SongForm extends React.Component {
             onChange={this.onInput}
           />
         </label>
-        <label>
-          <input
-            type="text"
-            placeholder="rating"
-            name="rating"
-            value={this.state.value}
-            onChange={this.onInput}
-          />
-        </label>
 
-        {/* <select
-          placeholder="rating2"
-          name="rating2"
+        <select
+          placeholder="rating"
+          name="rating"
           value={this.state.value}
           onChange={this.onInput}
         >
-          <option value=" ">rating</option>
+          <option value=" ">give your rating</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select> */}
+        </select>
 
-        <input type="submit" value="Submit" />
+        <button type="submit">submit</button>
       </form>
     );
   }

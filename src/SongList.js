@@ -1,4 +1,5 @@
 import React from "react";
+import SongForm from "./SongForm";
 
 class SongList extends React.Component {
   constructor() {
@@ -9,14 +10,14 @@ class SongList extends React.Component {
           id: 1,
           title: "It's a Hard-Knocked Life",
           artist: "Annie",
-          genre: "Musical",
+          genre: "musical",
           rating: "5"
         },
         {
           id: 2,
           title: "Complicated",
           artist: "Avril Lavigne",
-          genre: "xxxx",
+          genre: "pop",
           rating: "2"
         }
       ]
@@ -43,12 +44,22 @@ class SongList extends React.Component {
       this.setState({ songs: this.state.songs.concat(item) });
     };
 
+    // const GroceryList = ({ groceryItems, handleClickGroceryItem, addGrocery }) => {
+    //   return (
+    //     <React.Fragment>
+    //       <InputField onSubmit={addGrocery} />
+    //       <List items={groceryItems} handleClickItem={handleClickGroceryItem} />
+    //     </React.Fragment>
+    //   );
+    // };
+
     return (
       <div>
-        <h3>default songs</h3>
+        <h5> default song examples</h5>
         <table className="songs" style={{ width: "100%" }}>
           <tbody>
-            {this.displaySongs()} {addSong}
+            <SongForm onSubmit={addSong} />
+            {this.displaySongs()}
           </tbody>
         </table>
       </div>
