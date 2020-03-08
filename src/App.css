@@ -26,8 +26,10 @@ header > p {
   margin-left: 60px;
 }
 
-.input-form {
+.input-form,
+h5 {
   height: 60px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
