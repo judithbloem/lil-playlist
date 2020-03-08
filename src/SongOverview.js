@@ -1,41 +1,47 @@
-import React from "react";
-// import SongForm from "./SongForm";
-import SongForm from "./SongForm";
+import React, { useState } from "react";
+import AddSongForm from "./AddSongForm";
 import SongList from "./SongList";
 
-class SongOverview extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      songs: []
-    };
-  }
+const SongOverview = () => {
+  const songData = [
+    {
+      id: 1,
+      title: "9 to 5",
+      artist: "Dolly Parton",
+      genre: "country",
+      rating: "3"
+    },
+    {
+      id: 2,
+      title: "Complicated",
+      artist: "Avril Lavigne",
+      genre: "pop",
+      rating: "2"
+    }
+  ];
 
-  addSong = song => {
-    // doe iets om de state aan te passen
+  const [songs, setSongs] = useState(songData);
+
+  const addSong = song => {
+    song.id = songs.length + 1;
+    setSongs([...songs, song]);
+  };
+  const deleteSong = id => {
+    setSongs(songs.filter(song => song.id !== id));
   };
 
-  render() {
-    return (
-      <div>
-        <SongForm
-        // addSong={this.addSong}
-        />
-        <table style={{ width: "100%" }}>
-          <tr className="song-header">
-            <th className="song-row__item">Song</th>
-            <th className="song-row__item">Artist</th>
-            <th className="song-row__item">Genre</th>
-            <th className="song-row__item">Rating</th>
-          </tr>
-        </table>
-
-        <SongList
-        // songs={this.state.songs}
-        />
+  return (
+    <div>
+      <div className="song-form">
+        <h5> Add song</h5>
+        <AddSongForm addSong={addSong} />
       </div>
-    );
-  }
-}
 
+      <div className="song-list">
+        <h5> View songs</h5>
+        <SongList songs={songs} deleteSong={deleteSong} />
+      </div>
+    </div>
+  );
+};
 export default SongOverview;
